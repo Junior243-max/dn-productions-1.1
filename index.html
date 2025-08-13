@@ -114,6 +114,33 @@
   <footer>
     &copy; 2025 DN Productions — Todos os direitos reservados.
   </footer>
+</head>
+<body>
+
+<h1>Pagamento via Pix</h1>
+<div class="pix">
+  <p>💳 Chave Pix: <strong>denilson202512@gmail.com</strong></p>
+  <p>Após pagar, peça a senha para liberar o download.</p>
+</div>
+
+<h2>🔓 Liberar Download</h2>
+<input type="password" id="senha" placeholder="Digite a senha">
+<button onclick="liberar()">Liberar</button>
+
+<div id="download" style="display:none;">
+  <a class="btn" href="https://www.mediafire.com/file/0yd1kaihwznaa8k/super+mininho+adventure+v+0.0.1.zip/file" title="Baixe o Super Mininho Adventure">🎮 Baixar Jogo</a>
+</div>
+
+<script>
+function liberar(){
+  let senha = document.getElementById("senha").value;
+  if(senha === "Denilson_produtor_de_jogos"){
+    document.getElementById("download").style.display = "block";
+  } else {
+    alert("Senha incorreta! Confirme com o vendedor.");
+  }
+}
+</script>
 
 </body>
 </html>
