@@ -117,49 +117,77 @@
 </head>
 <body>
 
-<h1>Pagamento via Pix</h1>
-<div class="pix">
- <!DOCTYPE html>
+<!DOCTYPE html>
 <html lang="pt-BR">
 <head>
   <meta charset="UTF-8">
-  <title>QR Code PIX</title>
+  <title>Pagamento via Pix</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: #0047ab;
+      color: #fff;
+      text-align: center;
+      padding: 20px;
+    }
+    .pix-box {
+      background: #0066cc;
+      padding: 20px;
+      border-radius: 10px;
+      display: inline-block;
+      margin-top: 20px;
+    }
+    button {
+      background: #00c853;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      color: white;
+      cursor: pointer;
+      font-size: 16px;
+    }
+    button:hover {
+      background: #009624;
+    }
+    #download {
+      display: none;
+      margin-top: 20px;
+    }
+  </style>
 </head>
 <body>
-  <h1>Meu QR Code PIX</h1>
+  <h1>Pagamento via Pix</h1>
+  <p>Pague utilizando a chave Pix abaixo:</p>
 
-  <img src="00020126580014BR.GOV.BCB.PIX0136e8f5a8ba-f377-4614-b715-69261029735752040000530398654041.005802BR5925Denilson Silva Carvalho J6009SAO PAULO62140510uZjkqH2ak663044E95" alt="QR Code PIX">
+  <div class="pix-box">
+    <p><strong>Chave Pix:</strong></p>
+    <p id="pixKey">denilson202512@gmail.com</p>
+    <button onclick="copiarPix()">Copiar Chave Pix</button>
+  </div>
 
-  <p>Escaneie o QR acima</p>
+  <br><br>
+  <button onclick="liberarDownload()">Já paguei, liberar download</button>
+
+  <div id="download">
+    <h2>✅ Obrigado pelo pagamento!</h2>
+    <a href="https://www.mediafire.com/file/0yd1kaihwznaa8k/super+mininho+adventure+v+0.0.1.zip/file" target="_blank">
+      <button>Baixar Jogo</button>
+    </a>
+  </div>
+
+  <script>
+    function copiarPix() {
+      let chave = document.getElementById("pixKey").innerText;
+      navigator.clipboard.writeText(chave);
+      alert("Chave Pix copiada!");
+    }
+
+    function liberarDownload() {
+      document.getElementById("download").style.display = "block";
+    }
+  </script>
 </body>
-</html> <p>Após pagar, peça a senha para liberar o download.</p>
-</div>
-
-<h2>🔓 Liberar Download</h2>
-<input type="password" id="senha" placeholder="Digite a senha">
-<button onclick="liberar()">Liberar</button>
-
-<div id="download" style="display:none;">
-  <a class="btn" href="https://www.mediafire.com/file/0yd1kaihwznaa8k/super+mininho+adventure+v+0.0.1.zip/file" title="Baixe o Super Mininho Adventure">🎮 Baixar Jogo</a>
-</div>
-
-<script>
-function liberar(){
-  let senha = document.getElementById("senha").value;
-  if(senha === "Denilson_produtor_de_jogos"){
-    document.getElementById("download").style.display = "block";
-  } else {
-    alert("Senha incorreta! Confirme com o vendedor.");
-  }
-}
-</script>
-<script src="https://utteranc.es/client.js"
-        repo="https://junior243-max.github.io/DN-productions/"
-        issue-term="pathname"
-        theme="github-light"
-        crossorigin="anonymous"
-        async>
-</script>
+</html>
 <p> produzido por davi lucas,matheus e denilson
 </body>
 </html>
